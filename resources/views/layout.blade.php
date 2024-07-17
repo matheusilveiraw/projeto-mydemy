@@ -11,10 +11,8 @@
 
 <body>
     <header>
-
-
         <nav class="navbar">
-            <div>
+            <div class="hamburguer">
                 <i class="fas fa-bars"></i>
             </div>
             <div class="navbar-left">
