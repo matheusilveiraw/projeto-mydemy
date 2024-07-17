@@ -1,0 +1,199 @@
+body {
+    margin: 0;
+    font-family: BlinkMacSystemFont, Roboto, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 40px;
+}
+
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.navbar-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: black;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.navbar-search {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    position: relative; 
+}
+
+.navbar-search input[type="text"] {
+    padding-left: 30px; 
+}
+.navbar-search .fa-search {
+    position: absolute;
+    left: 10px; 
+    top: 50%; 
+    transform: translateY(-50%);
+    color: #999; 
+}
+
+.navbar-search input {
+    padding: 15px;
+    border: 1px solid #030000;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-icons {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-icons a {
+    font-size: 13px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    margin: 0 5px 0 5px
+}
+
+.navbar-links li {
+    margin: 0 15px;
+}
+
+.navbar-links a {
+    font-size: 13px;
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+}
+
+.navbar-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-buttons a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.navbar-buttons .btn {
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.navbar-buttons .login-btn {
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    padding: 9px;
+}
+
+.navbar-buttons .signup-btn {
+    background-color: black;
+    padding: 10px;
+    color: white;
+}
+
+.navbar-buttons .cart img {
+    height: 24px;
+}
+
+/* Responsividade */
+@media (max-width: 1300px) { 
+    #udemy-business {
+        display: none;
+    }
+}
+
+@media (max-width: 1100px) { 
+    #ensine-udemy {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-search {
+        width: 100%;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .dropdown-menu {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        border-top: 1px solid #ddd;
+    }
+
+    .dropdown-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .dropdown-menu ul li {
+        padding: 10px 20px;
+    }
+
+    .dropdown-menu ul li a {
+        text-decoration: none;
+        color: black;
+        font-weight: 500;
+    }
+
+    .dropdown-menu.open {
+        display: flex;
+    }
+}
+
+/*  SITE COM MENU HAMBURGUER AQUI  */
+@media (max-width: 860px) { 
+    .navbar-buttons {
+        display: none;
+    }
+    .navbar-links{
+        display: none;
+    }
+
+    .navbar-search { 
+        display: none;
+    } 
+}
