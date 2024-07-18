@@ -2,7 +2,7 @@
 
 @section('titulo', 'Página Inicial')
 
-@section('conteudo')
+@section('index')
 
 <div class="container">
     <img src="{{ asset('img/img-a-promocao-de-gratidao.png')}}" alt="Imagem" class="image">

@@ -14,7 +14,6 @@ class CategoriasSeeder extends Seeder
      */
     public function run(): void
     {
-
         Categorias::create(['nome_categoria' => 'Desenvolvimento']);
         Categorias::create(['nome_categoria' => 'Negócios']);
         Categorias::create(['nome_categoria' => 'Finanças e contabilidade']);
@@ -28,8 +27,6 @@ class CategoriasSeeder extends Seeder
         Categorias::create(['nome_categoria' => 'Saúde e fitness']);
         Categorias::create(['nome_categoria' => 'Música']);
         Categorias::create(['nome_categoria' => 'Ensino e estudo acadêmico']);
-
-
 
         // Categorias::factory(5)->create(); 
     }

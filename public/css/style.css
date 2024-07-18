@@ -134,6 +134,54 @@ body {
     height: 24px;
 }
 
+.navbar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links .dropdown {
+    position: relative;
+}
+
+.navbar-links .dropdown-toggle::after {
+    margin-left: 5px;
+}
+
+.navbar-links .dropdown-menu {
+    display: none;
+    position: absolute;
+    width: 300px;
+    top: 210%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    border: 1px solid #ddd;
+    z-index: 1000;
+}
+
+.navbar-links .dropdown-menu li {
+    padding: 5px 20px;
+}
+
+.navbar-links .dropdown-menu li a {
+    color: black;
+    text-decoration: none;
+}
+
+.navbar-links .dropdown-menu li:hover {
+    background-color: #f1f1f1;
+}
+
+.navbar-links .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
 /* NAV FIM */
 
 /* relacionado a parte de promoção de gratidão ao aluno termina hoje INICIO */

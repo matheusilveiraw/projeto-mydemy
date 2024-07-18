@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategoriasController;
+use App\Models\Categorias;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +19,9 @@ Route::get('/', function () {
     // return view('welcome');
     return view('index');
 });
+
+// Route::resource('categorias', CategoriasController::class);
+Route::get('/', [CategoriasController::class, 'index']);
+
+// Route::resource('/', [CategoriasController::class, 'layout']);
+
