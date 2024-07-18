@@ -12,7 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\Categorias::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
@@ -21,6 +20,7 @@ class DatabaseSeeder extends Seeder
        // todos os seeders que vão ser executados tem que vir aqui
         $this->call([
             CategoriasSeeder::class, 
+            CursosSeeder::class
         ]);
     }
 }
