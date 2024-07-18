@@ -5,8 +5,6 @@ body {
 }
 
 /* NAV INICIO */
-
-
 .navbar {
     display: flex;
     justify-content: space-between;
