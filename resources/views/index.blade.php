@@ -34,56 +34,17 @@
     <h2>Uma ampla seleção de cursos</h2>
     <p>Escolha entre mais de 220.000 cursos em vídeo online com novas adições publicadas mensalmente</p>
 
-    <?php
-    function sortearCategorias($qnt)
-    {
-        $valores = [];
-        for ($i = 0; $i < $qnt; $i++) {
-            $valores[] = rand(1, 13);
-        }
-        return $valores;
-    }
-
-    $categoriasSorteadas = sortearCategorias(3);
-
-    foreach ($categoriasSorteadas as $key) {
-    ?>
-        <h3>{{$categorias[$key]['nome_categoria']}} </h3>
-
-        <?php
-        foreach ($cursos as $curso) {
-            if ($curso->id_categoria == $key) {
-        ?>
-                <img src="" alt="">
-                <h4>{{$curso->nome_curso}}</h4>
-                <?php
-                foreach ($professores as $professor) {
-                    if ($curso->id_professor == $professor->id) {
-                ?>
-                        <p>{{$professor->nome_professor}}</p>
-
-                <?php
-                    }
-                }
-                ?>
-
-                <p>{{$curso->preco}}</p>
-    <?php
-            }
-        }
-    }
-    ?>
-
-
-
-    <div class="cursos-individuais">
-        <!-- for each aqui  -->
-
-        <!-- end for each aqui  -->
-    </div>
-
-
-
+    @foreach ($categorias as $categoria)
+        <h3>{{ $categoria->nome_categoria }}</h3>
+        @foreach ($cursos->where('id_categoria', $categoria->id) as $curso)
+            <img src="{{ $curso->img_curso }}" alt="{{ $curso->nome_curso }}">
+            <h4>{{ $curso->nome_curso }}</h4>
+            @foreach ($professores->where('id', $curso->id_professor) as $professor)
+                <p>{{ $professor->nome_professor }}</p>
+            @endforeach
+            <p>R${{ number_format($curso->preco, 2, ',', '.') }}</p>
+        @endforeach
+    @endforeach
 </div>
 
 @endsection

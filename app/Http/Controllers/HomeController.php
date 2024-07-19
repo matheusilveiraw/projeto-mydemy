@@ -13,12 +13,14 @@ class HomeController extends Controller
      * Display a listing of the resource.
      */
     public function index() {
-        $categorias = Categorias::all();
-        $cursos = Cursos::all();
+        $categoriaIds = range(1, 13);
+        shuffle($categoriaIds);
+        $categoriaIds = array_slice($categoriaIds, 0, 3);
+
+        $categorias = Categorias::whereIn('id', $categoriaIds)->get();
+        $cursos = Cursos::whereIn('id_categoria', $categoriaIds)->get();
         $professores = Professores::all();
 
-
-        // Retorna uma visão com os dados de categorias e cursos
         return view('index', compact('categorias', 'cursos', 'professores'));
     }
 
