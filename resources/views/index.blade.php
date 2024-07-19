@@ -28,7 +28,7 @@
             <li class="patrocinadores"><img src="{{ asset('img/ericsson.svg')}}" alt=""></li>
         </ul>
     </div>
-</div> 
+</div>
 
 <div class="painel-cursos">
     <h2>Uma ampla seleção de cursos</h2>
@@ -37,17 +37,25 @@
     @foreach ($categorias as $categoria)
     <h3>{{ $categoria->nome_categoria }}</h3>
 
-    <div class="cursos-horizontal">
-        @foreach ($cursos->where('id_categoria', $categoria->id)->take(24) as $curso)
-        <div class="card-curso">
-            <img class="img-curso" src="{{ $curso->img_curso }}" alt="{{ $curso->nome_curso }}">
-            <h4 class="nome-curso">{{ Str::limit($curso->nome_curso, 40)}}</h4> 
-            @foreach ($professores->where('id', $curso->id_professor) as $professor)
-            <p class="nome-professor">{{ Str::limit($professor->nome_professor, 30)}}</p> 
+    <div class="card-grande-cursos">
+
+        <h3>{{ $categoria->sub_titulo_categoria }}</h3>
+        <p>{{ $categoria->descricao_categoria }}</p>
+
+
+        <div class="cursos-horizontal">
+            @foreach ($cursos->where('id_categoria', $categoria->id)->take(24) as $curso)
+            <div class="card-curso">
+                <img class="img-curso" src="{{ $curso->img_curso }}" alt="{{ $curso->nome_curso }}">
+                <h4 class="nome-curso">{{ Str::limit($curso->nome_curso, 40)}}</h4>
+                @foreach ($professores->where('id', $curso->id_professor) as $professor)
+                <p class="nome-professor">{{ Str::limit($professor->nome_professor, 30)}}</p>
+                @endforeach
+                <p class="preco-curso">R${{ number_format($curso->preco, 2, ',', '.') }}</p>
+            </div>
             @endforeach
-            <p class="preco-curso">R${{ number_format($curso->preco, 2, ',', '.') }}</p>
         </div>
-        @endforeach
+
     </div>
     @endforeach
 </div>

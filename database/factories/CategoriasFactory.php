@@ -19,6 +19,7 @@ class CategoriasFactory extends Factory
         return [
             'nome_categoria' => $this->faker->unique()->sentence(),
             'descricao_categoria' => $this->faker->paragraph(),
+            'sub_titulo_categoria' => $this->faker->unique()->sentence(),
             'img_categoria' => $this->faker->imageUrl(400,400),
         ];
     }
