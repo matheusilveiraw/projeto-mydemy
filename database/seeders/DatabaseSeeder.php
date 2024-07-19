@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CategoriasSeeder::class, 
             ProfessoresSeeder::class,
-            // CursosSeeder::class, //cursos tem que ser o último pois tem as chaves estrangeiras do restante
+            CursosSeeder::class, //cursos tem que ser o último pois tem as chaves estrangeiras do restante
         ]);
     }
 }
