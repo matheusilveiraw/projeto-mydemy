@@ -277,6 +277,10 @@ body {
     flex-wrap: wrap;
 }
 
+.hamburguer {
+    display: none;
+}
+
 /* credibilidade 15K FIM */
 
 
@@ -361,7 +365,7 @@ body {
     }
 
     .hamburguer {
-        display: none;
+        display: block;
     }
 }
 
