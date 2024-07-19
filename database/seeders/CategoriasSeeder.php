@@ -14,20 +14,24 @@ class CategoriasSeeder extends Seeder
      */
     public function run(): void
     {
-        Categorias::create(['nome_categoria' => 'Desenvolvimento']);
-        Categorias::create(['nome_categoria' => 'Negócios']);
-        Categorias::create(['nome_categoria' => 'Finanças e contabilidade']);
-        Categorias::create(['nome_categoria' => 'TI e software']);
-        Categorias::create(['nome_categoria' => 'Produtividade no escritório']);
-        Categorias::create(['nome_categoria' => 'Desenvolvimento pessoal']);
-        Categorias::create(['nome_categoria' => 'Design']);
-        Categorias::create(['nome_categoria' => 'Marketing']);
-        Categorias::create(['nome_categoria' => 'Estilo de vida']);
-        Categorias::create(['nome_categoria' => 'Fotografia e vídeo']);
-        Categorias::create(['nome_categoria' => 'Saúde e fitness']);
-        Categorias::create(['nome_categoria' => 'Música']);
-        Categorias::create(['nome_categoria' => 'Ensino e estudo acadêmico']);
+        $nomesCategorias = [
+            'Desenvolvimento',
+            'Negócios',
+            'Finanças e contabilidade',
+            'TI e software',
+            'Produtividade no escritório',
+            'Desenvolvimento pessoal',
+            'Design',
+            'Marketing',
+            'Estilo de vida',
+            'Fotografia e vídeo',
+            'Saúde e fitness',
+            'Música',
+            'Ensino e estudo acadêmico'
+        ];
 
-        // Categorias::factory(5)->create(); 
+        foreach ($nomesCategorias as $nome) {
+            Categorias::factory()->withName($nome)->create();
+        }
     }
 }

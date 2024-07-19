@@ -17,7 +17,18 @@ class CategoriasFactory extends Factory
     public function definition(): array
     {
         return [
-            'nome_categoria' => $this->faker->unique()->sentence()
+            'nome_categoria' => $this->faker->unique()->sentence(),
+            'descricao_categoria' => $this->faker->paragraph(),
+            'img_categoria' => $this->faker->imageUrl(400,400),
         ];
+    }
+
+    public function withName($name)
+    {
+        return $this->state(function (array $attributes) use ($name) {
+            return [
+                'nome_categoria' => $name,
+            ];
+        });
     }
 }

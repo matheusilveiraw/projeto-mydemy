@@ -286,21 +286,23 @@ body {
 
 /* parte que mostra cursos das categorias */
 
-
 .painel-cursos {
     padding: 20px;
 }
 
 .cursos-horizontal {
     display: flex;
-    flex-wrap: wrap; /* Permite que os cursos se movam para a próxima linha, se necessário */
-    gap: 20px; /* Espaçamento entre os cursos */
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+    gap: 20px; 
+    padding-bottom: 20px; 
 }
 
 .card-curso {
     border-radius: 8px;
-    width: 200px; /* Largura fixa para cada cartão de curso */
+    width: 200px; 
     background-color: #fff;
+    flex: 0 0 auto; 
 }
 
 .img-curso {
@@ -309,8 +311,8 @@ body {
 }
 
 .nome-curso, .img-curso, .nome-professor, .preco-curso { 
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 .nome-professor {
@@ -318,12 +320,9 @@ body {
     color: gray;
 }
 
-.preco-curso{
+.preco-curso {
     font-weight: bolder;
 }
-
-
-
 
 @media (max-width: 1300px) {
     #udemy-business {
@@ -419,7 +418,7 @@ body {
         position: static;
         transform: none;
         box-shadow: none;
-        width: 100%;
+        width: 90%;
     }
 
     .container {

@@ -38,10 +38,10 @@
     <h3>{{ $categoria->nome_categoria }}</h3>
 
     <div class="cursos-horizontal">
-        @foreach ($cursos->where('id_categoria', $categoria->id)->take(10) as $curso)
+        @foreach ($cursos->where('id_categoria', $categoria->id)->take(24) as $curso)
         <div class="card-curso">
             <img class="img-curso" src="{{ $curso->img_curso }}" alt="{{ $curso->nome_curso }}">
-            <h4 class="nome-curso">{{ Str::limit($curso->nome_curso, 43)}}</h4> 
+            <h4 class="nome-curso">{{ Str::limit($curso->nome_curso, 40)}}</h4> 
             @foreach ($professores->where('id', $curso->id_professor) as $professor)
             <p class="nome-professor">{{ Str::limit($professor->nome_professor, 30)}}</p> 
             @endforeach
