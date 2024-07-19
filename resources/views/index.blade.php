@@ -9,7 +9,7 @@
     <div class="text-overlay">
         <h1>A promoção de gratidão ao aluno termina hoje</h1>
         <p>Aproveite ofertas especiais de agradecimentos agoa com cursos a partir de R$24,90!</p>
-    </div> 
+    </div>
 </div>
 
 <div class="container-patrocinadores gray-large">
@@ -33,17 +33,57 @@
 <div class="painel-cursos">
     <h2>Uma ampla seleção de cursos</h2>
     <p>Escolha entre mais de 220.000 cursos em vídeo online com novas adições publicadas mensalmente</p>
-    <div>
-        <li>Categoria xxxx</li>
-        <li>Categoria xxxx</li>
-        <li>Categoria xxxx</li>
-        <li>Categoria xxxx</li>
-        <li>Categoria xxxx</li>
-        <li>Categoria xxxx</li>
-        <li>Categoria xxxx</li>
-        <li>Categoria xxxx</li>
-        <li>Categoria xxxx</li>
+
+    <?php
+    function sortearCategorias($qnt)
+    {
+        $valores = [];
+        for ($i = 0; $i < $qnt; $i++) {
+            $valores[] = rand(1, 13);
+        }
+        return $valores;
+    }
+
+    $categoriasSorteadas = sortearCategorias(3);
+
+    foreach ($categoriasSorteadas as $key) {
+    ?>
+        <h3>{{$categorias[$key]['nome_categoria']}} </h3>
+
+        <?php
+        foreach ($cursos as $curso) {
+            if ($curso->id_categoria == $key) {
+        ?>
+                <img src="" alt="">
+                <h4>{{$curso->nome_curso}}</h4>
+                <?php
+                foreach ($professores as $professor) {
+                    if ($curso->id_professor == $professor->id) {
+                ?>
+                        <p>{{$professor->nome_professor}}</p>
+
+                <?php
+                    }
+                }
+                ?>
+
+                <p>{{$curso->preco}}</p>
+    <?php
+            }
+        }
+    }
+    ?>
+
+
+
+    <div class="cursos-individuais">
+        <!-- for each aqui  -->
+
+        <!-- end for each aqui  -->
     </div>
+
+
+
 </div>
 
 @endsection

@@ -2,19 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorias;
 use App\Models\Cursos;
+use App\Models\Professores;
 use Illuminate\Http\Request;
 
-class CursosController extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
+    public function index() {
+        $categorias = Categorias::all();
         $cursos = Cursos::all();
+        $professores = Professores::all();
 
-        return view('index', compact('cursos')); 
+
+        // Retorna uma visão com os dados de categorias e cursos
+        return view('index', compact('categorias', 'cursos', 'professores'));
     }
 
     /**
@@ -36,7 +41,7 @@ class CursosController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Cursos $cursos)
+    public function show(Categorias $categorias)
     {
         //
     }
@@ -44,7 +49,7 @@ class CursosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Cursos $cursos)
+    public function edit(Categorias $categorias)
     {
         //
     }
@@ -52,7 +57,7 @@ class CursosController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Cursos $cursos)
+    public function update(Request $request, Categorias $categorias)
     {
         //
     }
@@ -60,7 +65,7 @@ class CursosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cursos $cursos)
+    public function destroy(Categorias $categorias)
     {
         //
     }

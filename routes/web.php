@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\CategoriasController;
+use App\Http\Controllers\CursosController;
 use App\Models\Categorias;
+use App\Models\Cursos;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,8 +22,10 @@ Route::get('/', function () {
     return view('index');
 });
 
-// Route::resource('categorias', CategoriasController::class);
-Route::get('/', [CategoriasController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
 
-// Route::resource('/', [CategoriasController::class, 'layout']);
+// Route::get('/', [CategoriasController::class, 'index'], [[CursosController::class, 'index']]);
+
+
+
 
