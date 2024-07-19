@@ -90,4 +90,6 @@ $contador = 0;
     @endphp
     @endforeach
 </div>
+
+
 @endsection
