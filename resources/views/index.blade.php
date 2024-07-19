@@ -26,18 +26,18 @@
             <li class="patrocinadores"><img src="{{ asset('img/hewlett-packard.svg')}}" alt=""></li>
             <li class="patrocinadores"><img src="{{ asset('img/citi.svg')}}" alt=""></li>
             <li class="patrocinadores"><img src="{{ asset('img/ericsson.svg')}}" alt=""></li>
-        </ul>
+        </ul> 
     </div>
 </div>
 
-<div class="painel-cursos">
+<div class="painel-cursos"> 
     <h2>Uma ampla seleção de cursos</h2>
     <p>Escolha entre mais de 220.000 cursos em vídeo online com novas adições publicadas mensalmente</p>
 
     @foreach ($categorias as $categoria)
         <h3>{{ $categoria->nome_categoria }}</h3>
-        @foreach ($cursos->where('id_categoria', $categoria->id) as $curso)
-            <img src="{{ $curso->img_curso }}" alt="{{ $curso->nome_curso }}">
+        @foreach ($cursos->where('id_categoria', $categoria->id)->take(10) as $curso)
+            <img class="img-curso" src="{{ $curso->img_curso }}" alt="{{ $curso->nome_curso }}">
             <h4>{{ $curso->nome_curso }}</h4>
             @foreach ($professores->where('id', $curso->id_professor) as $professor)
                 <p>{{ $professor->nome_professor }}</p>

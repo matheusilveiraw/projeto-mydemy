@@ -294,6 +294,12 @@ body {
     margin: 20px;
 }
 
+.img-curso { 
+    width: 100px; /* Ajuste a largura da imagem conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Ajusta a imagem para preencher o contêiner */
+}
+
 
 @media (max-width: 1300px) {
     #udemy-business {
