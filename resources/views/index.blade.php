@@ -9,10 +9,10 @@
     <div class="text-overlay">
         <h1>A promoção de gratidão ao aluno termina hoje</h1>
         <p>Aproveite ofertas especiais de agradecimentos agoa com cursos a partir de R$24,90!</p>
-    </div>
+    </div> 
 </div>
 
-<div class="container gray-large">
+<div class="container-patrocinadores gray-large">
     <h2>Credibilidade perante mais de 15.000 empresas e milhões de alunos em todo o mundo</h2>
     <div class="lista-patrocinadores">
         <ul>
@@ -28,7 +28,22 @@
             <li class="patrocinadores"><img src="{{ asset('img/ericsson.svg')}}" alt=""></li>
         </ul>
     </div>
+</div>
 
+<div class="painel-cursos">
+    <h2>Uma ampla seleção de cursos</h2>
+    <p>Escolha entre mais de 220.000 cursos em vídeo online com novas adições publicadas mensalmente</p>
+    <div>
+        <li>Categoria xxxx</li>
+        <li>Categoria xxxx</li>
+        <li>Categoria xxxx</li>
+        <li>Categoria xxxx</li>
+        <li>Categoria xxxx</li>
+        <li>Categoria xxxx</li>
+        <li>Categoria xxxx</li>
+        <li>Categoria xxxx</li>
+        <li>Categoria xxxx</li>
+    </div>
 </div>
 
 @endsection

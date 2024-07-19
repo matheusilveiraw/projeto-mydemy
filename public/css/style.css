@@ -187,13 +187,33 @@ body {
 /* relacionado a parte de promoção de gratidão ao aluno termina hoje INICIO */
 .full-height {
     display: flex;
-
     height: 100%;
 }
 
 .container {
+    display: flex;
+    justify-content: center;
+    /* Centraliza a imagem horizontalmente */
+    align-items: center;
+    /* Alinha verticalmente */
+    width: 100%;
+    box-sizing: border-box;
+    /* Inclui padding e border no cálculo da largura e altura */
+    position: relative;
+}
+
+.container img {
+    max-width: 80%;
+    display: block;
+}
+
+.container-patrocinadores {
     position: relative;
     width: 100%;
+}
+
+.lista-patrocinadores h2{ 
+    margin-top: 10px;
 }
 
 .image {
@@ -221,13 +241,12 @@ body {
 .gray-large {
     margin-top: 20px;
     background-color: #f7f9fa;
-    padding: 20px 20px; /* Adiciona padding nas laterais para espaço */
-    text-align: center; 
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
 
-.gray-large h2 { 
+.gray-large h2 {
     font-size: 20px;
     color: #999;
     word-break: break-word;
@@ -238,33 +257,36 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center; 
-    flex-wrap: wrap; 
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .gray-large ul li {
-    margin: 10px; /* Espaçamento entre os elementos li */
+    margin: 10px;
 }
 
 .patrocinadores img {
     max-width: 100px;
-    height: auto; /* Mantém a proporção da imagem */
+    height: auto;
 }
 
-.lista-patrocinadores { 
+.lista-patrocinadores {
     justify-content: center;
     align-items: center;
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 /* credibilidade 15K FIM */
 
 
-/* Responsividade */
 @media (max-width: 1300px) {
     #udemy-business {
         display: none;
+    }
+
+    .container img {
+        max-width: 100%;
     }
 }
 
@@ -274,7 +296,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 950px) {
     .navbar-search {
         width: 100%;
     }
@@ -315,12 +337,9 @@ body {
     }
 
     .gray-large h2 {
-        font-size: 18px; /* Reduz o tamanho do texto */
+        font-size: 18px;
     }
-}
 
-/*  SITE COM MENU HAMBURGUER AQUI  */
-@media (max-width: 860px) {
     .navbar-buttons {
         display: none;
     }
@@ -340,26 +359,28 @@ body {
     .text-overlay h1 {
         font-size: 20px;
     }
-}
 
-@media (min-width: 860px) {
-    .hamburguer { 
+    .hamburguer {
         display: none;
     }
 }
-
 
 @media (max-width: 700px) {
     .text-overlay {
         position: static;
         transform: none;
         box-shadow: none;
-        width: 90%;
+        width: 100%;
+    }
+
+    .container {
+        flex-direction: column;
     }
 
     .text-overlay h1,
     .text-overlay p {
-        text-align: left; 
+        text-align: left;
+        margin: 10px;
     }
 
     .text-overlay p {

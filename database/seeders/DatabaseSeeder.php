@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,7 +21,8 @@ class DatabaseSeeder extends Seeder
        // todos os seeders que vão ser executados tem que vir aqui
         $this->call([
             CategoriasSeeder::class, 
-            CursosSeeder::class
+            ProfessoresSeeder::class,
+            // CursosSeeder::class, //cursos tem que ser o último pois tem as chaves estrangeiras do restante
         ]);
     }
 }

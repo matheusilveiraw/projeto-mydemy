@@ -21,6 +21,10 @@ return new class extends Migration
             $table->unsignedBigInteger('id_categoria'); //chave estrangeira para o categorias
             $table->foreign('id_categoria')->references('id')->on('categorias')->onDelete('cascade')->onUpdate('cascade');
     
+            $table->unsignedBigInteger('id_professor'); //chave estrangeira para professores
+            $table->foreign('id_professor')->references('id')->on('professores')->onDelete('cascade')->onUpdate('cascade');
+
+
             $table->timestamps();
         });
     }

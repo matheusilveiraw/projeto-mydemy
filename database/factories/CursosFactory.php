@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Categorias;
+use App\Models\Professores;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -23,6 +24,7 @@ class CursosFactory extends Factory
             'preco' => $this->faker->randomNumber(2),
             'img_curso' => $this->faker->imageUrl(400,400),
             'id_categoria' => Categorias::pluck('id')->random(),
+            'id_professor' => Professores::pluck('id')->random(),
         ];
     }
 }
