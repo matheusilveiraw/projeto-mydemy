@@ -34,7 +34,7 @@
     <h2>Uma ampla seleção de cursos</h2>
     <p>Escolha entre mais de 220.000 cursos em vídeo online com novas adições publicadas mensalmente</p>
 
-    @foreach ($categorias as $categoria)
+    @foreach ($categoriasListagemCursos as $categoria)
     <h3>{{ $categoria->nome_categoria }}</h3>
 
     <div class="card-grande-cursos">
@@ -60,4 +60,34 @@
     @endforeach
 </div>
 
+@php
+$contador = 0;
+@endphp
+
+<div class="principais-categorias">
+    <h3>Principais categorias</h3>
+    @foreach ($categoriasPrincipaisCategorias as $categoria)
+    @if($contador == 0 || $contador == 4)
+
+    <ul class="categorias-lista">
+        <li class="categoria-item">
+            <img src="{{ $categoria->img_categoria }}" alt="">
+            <h3>{{ $categoria->nome_categoria }}</h3>
+        </li>
+        @else
+        <li class="categoria-item">
+            <img src="{{ $categoria->img_categoria }}" alt="">
+            <h3>{{ $categoria->nome_categoria }}</h3>
+        </li>
+        @endif
+
+        @if($contador == 3 || $contador == 7)
+    </ul>
+    @endif
+
+    @php
+    $contador++;
+    @endphp
+    @endforeach
+</div>
 @endsection

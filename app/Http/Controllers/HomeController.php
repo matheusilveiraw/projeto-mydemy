@@ -17,11 +17,20 @@ class HomeController extends Controller
         shuffle($categoriaIds);
         $categoriaIds = array_slice($categoriaIds, 0, 3);
 
-        $categorias = Categorias::whereIn('id', $categoriaIds)->get();
+        $categoriaIdsPrincipaisCategorias = range(1, 13);
+        shuffle($categoriaIdsPrincipaisCategorias);
+        $categoriaIdsPrincipaisCategorias = array_slice($categoriaIdsPrincipaisCategorias, 0, 8);
+
+
+        $categoriasListagemCursos = Categorias::whereIn('id', $categoriaIds)->get();
         $cursos = Cursos::whereIn('id_categoria', $categoriaIds)->get();
         $professores = Professores::all();
+        $categoriasTodas = Categorias::all(); //para usar no navbar
+        $categoriasPrincipaisCategorias = Categorias::whereIn('id', $categoriaIdsPrincipaisCategorias)->get();
 
-        return view('index', compact('categorias', 'cursos', 'professores'));
+
+
+        return view('index', compact('categoriasTodas', 'categoriasListagemCursos', 'categoriasPrincipaisCategorias', 'cursos', 'professores'));
     }
 
     /**

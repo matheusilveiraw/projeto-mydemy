@@ -209,7 +209,7 @@ body {
     width: 100%;
 }
 
-.lista-patrocinadores h2{ 
+.lista-patrocinadores h2 {
     margin-top: 10px;
 }
 
@@ -278,7 +278,7 @@ body {
     display: none;
 }
 
-.lupa { 
+.lupa {
     display: none;
 }
 
@@ -292,25 +292,28 @@ body {
 
 .cursos-horizontal {
     display: flex;
-    flex-wrap: nowrap; 
-    overflow-x: auto; 
-    gap: 20px; 
-    padding-bottom: 20px; 
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 20px;
 }
 
 .card-curso {
     border-radius: 8px;
-    width: 200px; 
+    width: 200px;
     background-color: #fff;
-    flex: 0 0 auto; 
+    flex: 0 0 auto;
 }
 
 .img-curso {
     width: 100%;
-    height: 150px; 
+    height: 150px;
 }
 
-.nome-curso, .img-curso, .nome-professor, .preco-curso { 
+.nome-curso,
+.img-curso,
+.nome-professor,
+.preco-curso {
     margin: 0;
     padding: 0;
 }
@@ -324,18 +327,65 @@ body {
     font-weight: bolder;
 }
 
-.card-grande-cursos { 
+.card-grande-cursos {
     border: 1px solid #ddd;
     padding: 10px;
 }
+
+.categorias-lista {
+    display: flex;
+    flex-wrap: nowrap;
+    list-style-type: none;
+    padding: 10px;
+}
+
+.categoria-item {
+    flex: 1;
+    text-align: center;
+    margin: 0 5px 20px 5px;
+}
+
+.categoria-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.categoria-item h3 {
+    margin: 0;
+}
+
+.principais-categorias {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.principais-categorias h3 {
+    margin-left: 15px;
+}
+
+.c {
+    display: flex; /* Ativa o layout flexbox */
+  }
 
 @media (max-width: 1300px) {
     #udemy-business {
         display: none;
     }
 
+    .principais-categorias {
+        width: 100%;
+        margin: 0;
+    }
+
     .container img {
         max-width: 100%;
+    }
+
+    .card-grande-cursos {
+        padding: 10px;
+        margin: 0;
     }
 }
 
@@ -348,6 +398,11 @@ body {
 @media (max-width: 950px) {
     .navbar-search {
         width: 100%;
+    }
+
+    .categoria-item img {
+        width: 150px;
+        height: 150px;
     }
 
     .navbar-toggle {
@@ -413,8 +468,28 @@ body {
         display: block;
     }
 
-    .lupa { 
+    .lupa {
         display: block;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .categorias-lista { 
+        display: inline-block;
+    }
+
+    .categoria-item { 
+        display: inline-block;
+    }
+
+    .categoria-item img {
+        display: none;
+    }
+
+    .categoria-item h3 {
+        font-size: 10px;
+        display: none;
     }
 }
 

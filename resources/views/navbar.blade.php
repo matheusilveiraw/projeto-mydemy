@@ -11,7 +11,7 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle">Categorias</a>
                 <ul class="dropdown-menu">
-                    @foreach ($categorias as $c)
+                    @foreach ($categoriasTodas as $c)
                         <li>{{ $c->nome_categoria }}</li>
                     @endforeach
                 </ul>
