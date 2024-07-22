@@ -24,7 +24,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 // Route::get('/', [CategoriasController::class, 'index'], [[CursosController::class, 'index']]);
 

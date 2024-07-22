@@ -5,7 +5,7 @@
     </div>
     <div class="navbar-left">
         <div class="navbar-brand">
-            <a href="#"><img src="{{ asset('img/logo-udemy.svg')}}" alt="Udemy Logo"></a>
+            <a href="{{ route('index')}}"><img src="{{ asset('img/logo-udemy.svg')}}" alt="Udemy Logo"></a>
         </div>
         <ul class="navbar-links">
             <li class="dropdown">
