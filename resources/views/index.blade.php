@@ -2,7 +2,7 @@
 
 @section('titulo', 'Página Inicial')
 
-@section('index')
+@section('conteudo')
 
 <div class="container">
     <img src="{{ asset('img/img-a-promocao-de-gratidao.png')}}" alt="Imagem" class="image">
@@ -46,7 +46,9 @@
         <div class="cursos-horizontal">
             @foreach ($cursos->where('id_categoria', $categoria->id)->take(24) as $curso)
             <div class="card-curso">
-                <img class="img-curso" src="{{ $curso->img_curso }}" alt="{{ $curso->nome_curso }}">
+                <a href="{{ route('cursos.details', $curso->slug) }}">
+                    <img class="img-curso" src="{{ $curso->img_curso }}" alt="{{ $curso->nome_curso }}">
+                </a>
                 <h4 class="nome-curso">{{ Str::limit($curso->nome_curso, 40)}}</h4>
                 @foreach ($professores->where('id', $curso->id_professor) as $professor)
                 <p class="nome-professor">{{ Str::limit($professor->nome_professor, 30)}}</p>

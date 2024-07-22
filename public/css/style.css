@@ -406,6 +406,27 @@ body {
     }
 }
 
+/* detalhes curso */
+
+.card-detalhes {
+    margin: 50px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 5px;
+}
+
+.card-informacoes-detalhes {
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.card-img-detalhes {
+    flex: 2;
+    border-radius: 15px;
+}
+
 @media (max-width: 1100px) {
     #ensine-udemy {
         display: none;
@@ -518,6 +539,11 @@ body {
         width: 90%;
     }
 
+    .card-img-detalhes {
+        height: 200px;
+        width: 200px;
+    }
+
     .container {
         flex-direction: column;
     }
@@ -542,3 +568,16 @@ body {
         height: 200px;
     }
 }
+
+
+@media (max-width: 600px) {
+    .card-detalhes {
+        flex-direction: column; /* Muda a direção para coluna em telas pequenas */
+        align-items: center; /* Centraliza os itens no eixo vertical */
+    }
+    
+    .card-img-detalhes, .card-informacoes-detalhes {
+        max-width: 100%; /* Garante que ambos ocupem a largura total */
+    }
+}
+

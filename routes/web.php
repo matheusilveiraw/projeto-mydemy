@@ -6,6 +6,8 @@ use App\Models\Categorias;
 use App\Models\Cursos;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SiteController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +27,8 @@ Route::get('/', function () {
 Route::get('/', [HomeController::class, 'index']);
 
 // Route::get('/', [CategoriasController::class, 'index'], [[CursosController::class, 'index']]);
+
+Route::get('/produto/{slug}', [SiteController::class, 'details'])->name('cursos.details');
 
 
 

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('descricao_curso');
             $table->string('img_curso');
             $table->double('preco', 10, 2);
+            $table->string('slug');
 
             $table->unsignedBigInteger('id_categoria'); //chave estrangeira para o categorias
             $table->foreign('id_categoria')->references('id')->on('categorias')->onDelete('cascade')->onUpdate('cascade');

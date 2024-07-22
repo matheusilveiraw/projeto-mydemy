@@ -15,7 +15,7 @@
         @include('navbar')
     </header>
 
-    @yield('index')
+    @yield('conteudo')
 
     <footer class="footer">
         <div class="container">

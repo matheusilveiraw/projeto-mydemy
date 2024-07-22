@@ -28,8 +28,6 @@ class HomeController extends Controller
         $categoriasTodas = Categorias::all(); //para usar no navbar
         $categoriasPrincipaisCategorias = Categorias::whereIn('id', $categoriaIdsPrincipaisCategorias)->get();
 
-
-
         return view('index', compact('categoriasTodas', 'categoriasListagemCursos', 'categoriasPrincipaisCategorias', 'cursos', 'professores'));
     }
 
