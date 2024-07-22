@@ -11,20 +11,27 @@
 </head>
 
 <body>
-    <header>
-        @include('navbar')
-    </header>
 
-    @yield('conteudo')
+    <div class="wrapper">
+        <header>
+            @include('navbar')
+        </header>
 
-    <footer class="footer">
-        <div class="container">
-            <a class="icone-git" href="https://github.com/matheusilveiraw">
-                <i data-feather="github"></i>
-            </a>
-            @matheusilveiraw | matheus.silveiraw@gmail.com
+        <div class="content">
+            @yield('conteudo')
         </div>
-    </footer>
+
+
+        <footer class="footer">
+            <div class="container">
+                <a class="icone-git" href="https://github.com/matheusilveiraw">
+                    <i data-feather="github"></i>
+                </a>
+                @matheusilveiraw | matheus.silveiraw@gmail.com
+            </div>
+        </footer>
+    </div>
+
 
     <script src="{{asset('js/script.js')}}""></script>
 

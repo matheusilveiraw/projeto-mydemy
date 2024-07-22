@@ -376,15 +376,23 @@ body {
     color: #fff;
     padding: 20px;
     text-align: center;
-    position: relative;
-    bottom: 0;
-    margin: 0;
 }
 
 .icone-git { 
     color: #fff;
     margin: 5px;
 }
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
 
 @media (max-width: 1300px) {
     #udemy-business {
