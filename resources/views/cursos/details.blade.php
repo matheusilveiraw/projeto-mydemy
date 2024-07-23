@@ -22,15 +22,16 @@
         <p>{{ $cursos->descricao_curso }}</p>
         <p class="preco-curso">R${{ number_format($cursos->preco, 2, ',', '.') }}</p>
 
-        <form action="" method="POST" enctype="multipart/form-data">
-            @csrf {{-- isso aqui gera um input tipo hidden que passa os dados --}}
-            <input type="hidden" name="id_curso" value="{{$cursos->id}}">
-            <input type="hidden" name="nome_curso" value="{{$cursos->nome_curso}}">
+        <form action="{{route('carrinho.addcarrinho')}}" method="POST">
+            @csrf
+            <input type="hidden" name="id" value="{{$cursos->id}}">
+            <input type="hidden" name="name" value="{{$cursos->nome_curso}}">
+            <input type="hidden" name="price" value="{{$cursos->preco}}">
             <input type="hidden" name="professor_curso" value="{{$professor}}">
             <input type="hidden" name="categoria_curso" value="{{$categoria}}">
-            <input type="hidden" name="preco_curso" value="{{$cursos->preco}}">
-            <input type="hidden" name="img_curso" value="{{$cursos->imagem}}">
-            <button type="button" class="btn btn-outline-success">Comprar</button>        
+            <input type="hidden" name="quantity" value="1">
+            <input type="hidden" name="img" value="{{$cursos->img_curso}}">
+            <button class="btn btn-outline-success">Comprar</button>        
         </form>
     </div>
     <div>

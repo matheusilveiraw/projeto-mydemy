@@ -29,9 +29,12 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 
 // Route::get('/', [CategoriasController::class, 'index'], [[CursosController::class, 'index']]);
 
-Route::get('/produto/{slug}', [SiteController::class, 'details'])->name('cursos.details');
+Route::get('/curso/{slug}', [SiteController::class, 'details'])->name('cursos.details');
 
-Route::get('/carrinho', [CarrinhoController::class, 'carrinhoLista'])->name('carrinho');
+Route::get('/carrinho', [CarrinhoController::class, 'carrinhoLista'])->name('carrinho.carrinho');
+
+Route::post('/carrinho', [CarrinhoController::class, 'addCarrinho'])->name('carrinho.addcarrinho');
+
 
 
 
