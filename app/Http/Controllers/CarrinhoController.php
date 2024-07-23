@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorias;
 use Darryldecode\Cart\Facades\CartFacade;
 use Darryldecode\Cart\Validators\Validator;
 use Illuminate\Http\Request;
@@ -10,12 +11,14 @@ class CarrinhoController extends Controller
 {
     public function carrinhoLista() { 
         $itens = CartFacade::getContent(); //aliases não funciona por alguma razão
-        dd($itens);
+        $categoriasTodas = Categorias::all(); //para usar no navbar
+
+        return view('carrinho.listaCarrinho', compact('itens', 'categoriasTodas'));
+
+        return redirect()->route('carrinho.listaCarrinho')->with('sucesso', 'Curso adicionado no carrinho com sucesso');
     }
 
     public function addCarrinho(Request $request) {
-        echo $request->img;
-   
         CartFacade::add([
             'id' => $request->id,
             'name' => $request->name,
@@ -25,5 +28,7 @@ class CarrinhoController extends Controller
                 'image' => $request->img
             ]
         ]);
+
+        return $this->carrinhoLista();
     }
 }
