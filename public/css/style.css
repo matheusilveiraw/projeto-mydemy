@@ -393,27 +393,6 @@ body {
     flex: 1;
 }
 
-
-@media (max-width: 1300px) {
-    #udemy-business {
-        display: none;
-    }
-
-    .principais-categorias {
-        width: 100%;
-        margin: 0;
-    }
-
-    .container img {
-        max-width: 100%;
-    }
-
-    .card-grande-cursos {
-        padding: 10px;
-        margin: 0;
-    }
-}
-
 /* detalhes curso */
 
 .card-detalhes {
@@ -433,6 +412,39 @@ body {
 .card-img-detalhes {
     flex: 2;
     border-radius: 15px;
+    margin-top: 20px;
+}
+
+.detalhes-professor-categoria{ 
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+} 
+
+.card-informacoes-detalhes h1 { 
+    margin: 0;
+    padding: 0;
+}
+
+
+@media (max-width: 1300px) {
+    #udemy-business {
+        display: none;
+    }
+
+    .principais-categorias {
+        width: 100%;
+        margin: 0;
+    }
+
+    .container img {
+        max-width: 100%;
+    }
+
+    .card-grande-cursos {
+        padding: 10px;
+        margin: 0;
+    }
 }
 
 @media (max-width: 1100px) {

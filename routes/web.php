@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarrinhoController;
 use App\Http\Controllers\CategoriasController;
 use App\Http\Controllers\CursosController;
 use App\Models\Categorias;
@@ -29,6 +30,9 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 // Route::get('/', [CategoriasController::class, 'index'], [[CursosController::class, 'index']]);
 
 Route::get('/produto/{slug}', [SiteController::class, 'details'])->name('cursos.details');
+
+Route::get('/carrinho', [CarrinhoController::class, 'carrinhoLista'])->name('carrinho');
+
 
 
 
