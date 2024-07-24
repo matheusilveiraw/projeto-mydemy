@@ -7,7 +7,7 @@
 <div class="mx-auto carrinho-layout">
     @if ($sucesso)
     <div class="card mt-5 mb-5">
-        <div class="card-body">
+        <div class="card-body" style="background-color: lightgreen;">
             {{$sucesso}}
         </div>
     </div>
@@ -28,11 +28,11 @@
         <tbody>
             @foreach ($itens as $i)
             <tr>
-                <td><img class="carrinho-imgs-lista" src="{{$i->attributes->image}}" alt=""></td>
+                <td><img class="carrinho-imgs-lista align-middle text-center" src="{{$i->attributes->image}}" alt=""></td>
                 <td class="align-middle">{{$i->name}}
                 </td>
                 <td class="align-middle">R${{ number_format($i->price, 2, ',', '.') }}</td>
-                <td class="align-middle"> <button type="button" class="btn btn-danger">Danger</button> </td>
+                <td class="align-middle"> <button type="button" class="btn btn-danger"><i data-feather="trash-2"></i></button> </td>
             </tr>
             @endforeach
         </tbody>
