@@ -9,11 +9,15 @@ use Illuminate\Http\Request;
 
 class CarrinhoController extends Controller
 {
-    public function carrinhoLista($valorMsg) { 
+    public function carrinhoLista($valorMsg = 0) { 
         $itens = CartFacade::getContent(); //aliases não funciona por alguma razão
         $categoriasTodas = Categorias::all(); //para usar no navbar
 
-        return view('carrinho.listaCarrinho', compact('itens', 'categoriasTodas', 'valorMsg'));
+        if($valorMsg) { 
+            return view('carrinho.listaCarrinho', compact('itens', 'categoriasTodas', 'valorMsg'));
+        }
+
+        return view('carrinho.listaCarrinho', compact('itens', 'categoriasTodas'));
     }
 
     public function addCarrinho(Request $request) {

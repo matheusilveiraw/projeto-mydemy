@@ -6,11 +6,12 @@
 
 <div class="mx-auto carrinho-layout">
 
+    @isset ($valorMsg)
     @switch($valorMsg)
     @case(1)
     <div class="card mt-5 mb-5">
         <div class="card-body" style="background-color: lightgreen;">
-                O curso foi adicionado ao carrinho!
+            O curso foi adicionado ao carrinho!
         </div>
     </div>
     @break
@@ -23,6 +24,8 @@
     </div>
     @break
     @endswitch
+    @endisset
+
 
     <h1>Seu carrinho possui {{$itens->count()}} cursos </h1>
 
