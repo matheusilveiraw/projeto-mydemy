@@ -9,17 +9,11 @@ use Illuminate\Http\Request;
 
 class CarrinhoController extends Controller
 {
-    public function carrinhoLista($novoItem) { 
+    public function carrinhoLista($valorMsg) { 
         $itens = CartFacade::getContent(); //aliases não funciona por alguma razão
         $categoriasTodas = Categorias::all(); //para usar no navbar
-        
-        if($novoItem) { 
-            $sucesso = 'Curso adicionado no carrinho com sucesso';
 
-        return view('carrinho.listaCarrinho', compact('itens', 'categoriasTodas', 'sucesso'));
-        }
-
-        return view('carrinho.listaCarrinho', compact('itens', 'categoriasTodas'));
+        return view('carrinho.listaCarrinho', compact('itens', 'categoriasTodas', 'valorMsg'));
     }
 
     public function addCarrinho(Request $request) {
@@ -33,6 +27,12 @@ class CarrinhoController extends Controller
             ]
         ]);
 
-        return $this->carrinhoLista(true);
+        return $this->carrinhoLista(1);
+    }
+
+    public function removeCarrinho(Request $request) { 
+        CartFacade::remove($request->id);
+
+        return $this->carrinhoLista(2);
     }
 }
