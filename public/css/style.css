@@ -4,6 +4,7 @@ body {
     font-family: BlinkMacSystemFont, Roboto, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
+
 /* NAV INICIO */
 .navbar {
     display: flex;
@@ -368,6 +369,8 @@ body {
 .c {
     display: flex; /* Ativa o layout flexbox */
   }
+
+
 
 /* footer */
   

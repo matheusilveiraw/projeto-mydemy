@@ -9,13 +9,19 @@ use Illuminate\Http\Request;
 
 class CarrinhoController extends Controller
 {
-    public function carrinhoLista() { 
+    public function carrinhoLista($novoItem) { 
         $itens = CartFacade::getContent(); //aliases não funciona por alguma razão
         $categoriasTodas = Categorias::all(); //para usar no navbar
+        
+        if($novoItem) { 
+            $sucesso = 'Curso adicionado no carrinho com sucesso';
+
+        return view('carrinho.listaCarrinho', compact('itens', 'categoriasTodas', 'sucesso'));
+        }
 
         return view('carrinho.listaCarrinho', compact('itens', 'categoriasTodas'));
 
-        return redirect()->route('carrinho.listaCarrinho')->with('sucesso', 'Curso adicionado no carrinho com sucesso');
+        // return redirect()->route('carrinho.listaCarrinho', )->with('sucesso', 'Curso adicionado no carrinho com sucesso');
     }
 
     public function addCarrinho(Request $request) {
@@ -29,6 +35,6 @@ class CarrinhoController extends Controller
             ]
         ]);
 
-        return $this->carrinhoLista();
+        return $this->carrinhoLista(true);
     }
 }

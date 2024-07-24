@@ -8,6 +8,14 @@
     <div class="card-informacoes-detalhes">
         <h1>Seu carrinho possui {{$itens->count()}} cursos </h1>
 
+        @if ($sucesso)
+        <div class="card">
+            <div class="card-body mensagem-sucesso">
+                {{$sucesso}}
+            </div>
+        </div>
+        @endif
+
         <table class="table">
             <thead>
                 <tr>
