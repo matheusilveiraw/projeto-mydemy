@@ -9,7 +9,7 @@
         </div>
         <ul class="navbar-links">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle">Categorias</a>
+                <a href="#" class="dropdown-toggle vermelho">Categorias</a>
                 <ul class="dropdown-menu">
                     @foreach ($categoriasTodas as $c)
                         <li>{{ $c->nome_categoria }}</li>

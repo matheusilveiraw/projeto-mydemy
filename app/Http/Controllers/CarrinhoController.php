@@ -20,8 +20,6 @@ class CarrinhoController extends Controller
         }
 
         return view('carrinho.listaCarrinho', compact('itens', 'categoriasTodas'));
-
-        // return redirect()->route('carrinho.listaCarrinho', )->with('sucesso', 'Curso adicionado no carrinho com sucesso');
     }
 
     public function addCarrinho(Request $request) {

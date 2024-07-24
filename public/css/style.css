@@ -370,6 +370,17 @@ body {
     display: flex; /* Ativa o layout flexbox */
   }
 
+/* carrinho */
+
+.carrinho-layout { 
+    margin: 5px; 
+    width:90%;
+}
+
+.carrinho-imgs-lista { 
+    width:100px; 
+    height:100px;
+}
 
 
 /* footer */
@@ -429,6 +440,10 @@ body {
     padding: 0;
 }
 
+.mensagem-sucesso  {
+    background-color: green;
+}
+
 
 @media (max-width: 1300px) {
     #udemy-business {
@@ -470,15 +485,9 @@ body {
         display: flex;
     }
 
-    .dropdown-menu {
-        display: none;
-        flex-direction: column;
-        background-color: white;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        border-top: 1px solid #ddd;
+
+    .vermelho { 
+        color: red;
     }
 
     .dropdown-menu ul {
@@ -591,6 +600,18 @@ body {
         height: 200px;
     }
 }
+
+
+@media (max-width: 450px) {
+    .carrinho-imgs-lista { 
+        width:50px; 
+        height:50px;
+    }
+}
+
+
+
+
 
 
 @media (max-width: 600px) {
