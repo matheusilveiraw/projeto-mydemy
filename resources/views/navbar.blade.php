@@ -25,7 +25,7 @@
     <div class="navbar-right">
         <ul class="navbar-icons">
             <li class="lupa"><a href="#"><i class="fas fa-search"></i></a></li>
-            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="{{ route('carrinho.carrinho') }}"><i class="fas fa-shopping-cart"></i></a></li>
         </ul>
         <div class="navbar-buttons">
             <a href="#" class="btn login-btn">Fazer login</a>
