@@ -32,14 +32,18 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col"></th>
                 <th scope="col">Nome</th>
                 <th scope="col">Preço</th>
-                <th scope="col">Remover</th>
+                <th scope="col"></th>
             </tr>
         </thead>
 
         <tbody>
+            @php
+            $valorTotal = 0;
+            @endphp
+
             @foreach ($itens as $i)
             <tr>
                 <td><img class="carrinho-imgs-lista align-middle text-center" src="{{$i->attributes->image}}" alt=""></td>
@@ -54,8 +58,18 @@
                     </form>
                 </td>
             </tr>
+
+            @php
+            $valorTotal += $i->price;
+            @endphp
             @endforeach
         </tbody>
     </table>
+
+    <div class="valor-total">
+        <h2>Total: R${{number_format($valorTotal, 2, ',', '.')}}</h2>
+        <button class="btn btn-success btn-lg">Finalizar compra</button>
+    </div>
+
 </div>
 @endsection
