@@ -31,7 +31,7 @@
             <input type="hidden" name="categoria_curso" value="{{$categoria}}">
             <input type="hidden" name="quantity" value="1">
             <input type="hidden" name="img" value="{{$cursos->img_curso}}">
-            <button class="btn btn-success mt-3">Adicionar ao carrinho</button>        
+            <button class="btn btn-success mt-3 btn-lg">Adicionar ao carrinho</button>        
         </form>
     </div>
     <div>
