@@ -1,8 +1,6 @@
 @extends('layout')
 @section('titulo', 'Página Inicial')
 @section('conteudo')
-
-
 <div class="container">
     <img src="{{ asset('img/img-a-promocao-de-gratidao.png')}}" alt="Imagem" class="image">
     <div class="text-overlay">
