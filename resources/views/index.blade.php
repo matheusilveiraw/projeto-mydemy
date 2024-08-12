@@ -7,8 +7,6 @@
         <h1>A promoção de gratidão ao aluno termina hoje</h1>
         <p>Aproveite ofertas especiais de agradecimentos agoa com cursos a partir de R$24,90!</p>
     </div>
-
-    
 </div>
 <div class="container-patrocinadores gray-large">
     <h2>Credibilidade perante mais de 15.000 empresas e milhões de alunos em todo o mundo</h2>
